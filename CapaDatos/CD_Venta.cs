@@ -83,13 +83,13 @@ namespace CapaDatos
                                 oProducto = new Producto()
                                 {
                                     Nombre = dr["Nombre"].ToString(),
-                                    Precio = Convert.ToDecimal(dr["Precio"], new CultureInfo("es-PE")),
+                                    Precio = Convert.ToDecimal(dr["Precio"], new CultureInfo("es-DO")),
                                     RutaImagen = dr["RutaImagen"].ToString(),
                                     NombreImagen = dr["NombreImagen"].ToString(),
                                 },
 
                                 Cantidad = Convert.ToInt32(dr["Cantidad"]),
-                                Total = Convert.ToDecimal(dr["Total"], new CultureInfo("es-PE")),
+                                Total = Convert.ToDecimal(dr["Total"], new CultureInfo("es-DO")),
                                 IdTransaccion = dr["IdTransaccion"].ToString()
                             });
                         }

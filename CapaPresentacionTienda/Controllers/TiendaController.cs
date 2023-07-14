@@ -260,7 +260,7 @@ namespace CapaPresentacionTienda.Controllers
 
             decimal total = 0;
             DataTable detalle_venta = new DataTable();
-            detalle_venta.Locale = new CultureInfo("es-PE");
+            detalle_venta.Locale = new CultureInfo("es-DO");
             detalle_venta.Columns.Add("IdProducto", typeof(string));
             detalle_venta.Columns.Add("Cantidad", typeof(int));
             detalle_venta.Columns.Add("Total", typeof(decimal));
@@ -278,7 +278,7 @@ namespace CapaPresentacionTienda.Controllers
                     quantity = oCarrito.Cantidad.ToString(),
                     unit_amount = new UnitAmount() { 
                         currency_code = "USD",
-                        value = oCarrito.oProducto.Precio.ToString("G",new CultureInfo("es-PE"))
+                        value = oCarrito.oProducto.Precio.ToString("G",new CultureInfo("es-DO"))
                     }
 
                 
@@ -296,11 +296,11 @@ namespace CapaPresentacionTienda.Controllers
             {
                 amount = new Amount() {
                     currency_code = "USD",
-                    value = total.ToString("G", new CultureInfo("es-PE")),
+                    value = total.ToString("G", new CultureInfo("es-DO")),
                     breakdown = new Breakdown() {
                         item_total = new ItemTotal() {
                             currency_code = "USD",
-                            value = total.ToString("G", new CultureInfo("es-PE")),
+                            value = total.ToString("G", new CultureInfo("es-DO")),
                         }
                     }
 
