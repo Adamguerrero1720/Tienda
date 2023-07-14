@@ -56,7 +56,6 @@ namespace CapaNegocio
         }
 
 
-
         public async Task<Response_Paypal<Response_Capture>> AprobarPago(string token)
         {
 
