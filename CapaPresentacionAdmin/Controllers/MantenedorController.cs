@@ -150,7 +150,7 @@ namespace CapaPresentacionAdmin.Controllers
 
             decimal precio;
 
-            if (decimal.TryParse(oProducto.PrecioTexto, NumberStyles.AllowDecimalPoint, new CultureInfo("es-PE"), out precio))
+            if (decimal.TryParse(oProducto.PrecioTexto, NumberStyles.AllowDecimalPoint, new CultureInfo("es-ES"), out precio))
             {
 
                 oProducto.Precio = precio;

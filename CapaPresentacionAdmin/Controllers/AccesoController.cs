@@ -33,7 +33,7 @@ namespace CapaPresentacionAdmin.Controllers
         {
             Usuario oUsuario = new Usuario();
 
-            oUsuario = new CN_Usuarios().Listar().Where(u => u.Correo == correo && u.Clave == CN_Recursos.ConvertirSha256(clave)).FirstOrDefault();
+            oUsuario = new CN_Usuarios().Listar().Where(u => u.Correo == correo && u.Clave == clave).FirstOrDefault();
 
 
             if (oUsuario == null)
@@ -68,7 +68,7 @@ namespace CapaPresentacionAdmin.Controllers
 
             oUsuario = new CN_Usuarios().Listar().Where(u => u.IdUsuario == int.Parse(idusuario)).FirstOrDefault();
 
-            if (oUsuario.Clave != CN_Recursos.ConvertirSha256(claveactual))
+            if (oUsuario.Clave != claveactual)
             {
                 TempData["IdUsuario"] = idusuario;
                 ViewData["vclave"] = "";
@@ -85,7 +85,7 @@ namespace CapaPresentacionAdmin.Controllers
             ViewData["vclave"] = "";
 
 
-            nuevaclave = CN_Recursos.ConvertirSha256(nuevaclave);
+            nuevaclave = nuevaclave;
 
 
             string mensaje = string.Empty;

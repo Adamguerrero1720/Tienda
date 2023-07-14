@@ -65,7 +65,7 @@ namespace CapaPresentacionTienda.Controllers
         {
             Cliente oCliente = null;
 
-            oCliente = new CN_Cliente().Listar().Where(item => item.Correo == correo && item.Clave == CN_Recursos.ConvertirSha256(clave)).FirstOrDefault();
+            oCliente = new CN_Cliente().Listar().Where(item => item.Correo == correo && item.Clave == clave).FirstOrDefault();
 
 
             if (oCliente == null)
@@ -141,7 +141,7 @@ namespace CapaPresentacionTienda.Controllers
 
             oCliente = new CN_Cliente().Listar().Where(u => u.IdCliente == int.Parse(idcliente)).FirstOrDefault();
 
-            if (oCliente.Clave != CN_Recursos.ConvertirSha256(claveactual))
+            if (oCliente.Clave != claveactual)
             {
                 TempData["IdCliente"] = idcliente;
                 ViewData["vclave"] = "";
@@ -159,7 +159,7 @@ namespace CapaPresentacionTienda.Controllers
             ViewData["vclave"] = "";
 
 
-            nuevaclave = CN_Recursos.ConvertirSha256(nuevaclave);
+            nuevaclave = nuevaclave;
 
 
             string mensaje = string.Empty;
